@@ -1,0 +1,696 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Chúc mừng 20/10 - Biệt Đội Cánh Tay Đắc Lực Của LQD 💖</title>
+<!-- Google Fonts: Montserrat (Modern UI) & Dancing Script / Pacifico (Chữ viết tay bay bổng) -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&amp;family=Montserrat:wght@400;500;600;700;800;900&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<!-- Canvas Confetti CDN -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Montserrat', 'Quicksand', 'sans-serif'],
+            handwriting: ['"Dancing Script"', 'cursive'],
+          },
+          colors: {
+            primaryPink: '#FF6584',
+            softPink: '#FFE5EC',
+            vibrantPink: '#FF2E7E',
+            dreamyPurple: '#A4508B',
+            deepViolet: '#5F0A87',
+            cardBg: 'rgba(255, 255, 255, 0.45)',
+          },
+          boxShadow: {
+            'glass': '0 8px 32px 0 rgba(164, 80, 139, 0.25)',
+            'glass-hover': '0 16px 40px 0 rgba(255, 46, 126, 0.35)',
+            'glow': '0 0 25px rgba(255, 101, 132, 0.65)',
+            'btn-glow': '0 4px 20px rgba(255, 46, 126, 0.4)',
+            'avatar-glow': '0 0 20px rgba(255, 101, 132, 0.4)',
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* CSS Reset & Tối ưu GPU rendering */
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    html, body {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(135deg, #FFF0F5 0%, #FFE4E6 25%, #F5D0FE 50%, #E9D5FF 75%, #FCE7F3 100%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    /* Hiệu ứng Glassmorphism mờ kính */
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+    }
+    
+    .glassmorphism-card {
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+    }
+
+    /* Text Glow Effect */
+    .text-glow {
+      text-shadow: 0 0 15px rgba(255, 46, 126, 0.4), 0 0 30px rgba(164, 80, 139, 0.3);
+    }
+    
+    .gold-glow {
+      text-shadow: 0 0 12px rgba(245, 158, 11, 0.5);
+    }
+
+    /* Animation rung lắc hộp quà */
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      15% { transform: rotate(-8deg) scale(1.05); }
+      30% { transform: rotate(8deg) scale(1.05); }
+      45% { transform: rotate(-5deg) scale(1.05); }
+      60% { transform: rotate(5deg) scale(1.05); }
+      75% { transform: rotate(-2deg) scale(1.02); }
+    }
+
+    .hover-wiggle:hover .gift-box-icon {
+      animation: wiggle 0.9s ease-in-out infinite;
+    }
+
+    /* Animation nhịp tim */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.12); }
+    }
+    .animate-heartbeat {
+      animation: heartbeat 1.8s infinite ease-in-out;
+    }
+
+    /* Floating Canvas background */
+    #particles-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Modal Animation */
+    @keyframes modalPopIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.85) translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .modal-animate-in {
+      animation: modalPopIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    /* Phong bì thư Ribbon Decor */
+    .letter-paper {
+      background: radial-gradient(circle at top left, #FFFDF9, #FFF7F0);
+      background-image: radial-gradient(#FBCFE8 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
+    }
+
+    /* Floating music disc rotate */
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .animate-spin-slow {
+      animation: spin-slow 4s linear infinite;
+    }
+  </style>
+</head>
+<body class="text-slate-800 antialiased font-sans relative selection:bg-pink-300 selection:text-pink-900">
+<!-- ================= CANVAS PARTICLES NỀN ================= -->
+<canvas id="particles-canvas" width="1280" height="1691"></canvas>
+<!-- ================= FLOATING ACTION BUTTON: AUDIO TOGGLE ================= -->
+<div class="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2">
+<!-- Music Status Label on Desktop -->
+<span class="hidden md:inline-block text-xs font-semibold px-3 py-1.5 rounded-full bg-white/70 backdrop-blur-md border border-white/80 shadow-sm text-pink-700 transition-all duration-300" id="music-status-text">
+      Bật nhạc chill 🎶
+    </span>
+<button aria-label="Toggle background music" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white flex items-center justify-center shadow-btn-glow hover:scale-110 active:scale-95 transition-all duration-300 relative group cursor-pointer focus:outline-none" id="music-toggle-btn" title="Bật/Tắt nhạc nền">
+<i class="fa-solid fa-music text-lg sm:text-xl group-hover:rotate-12 transition-transform" id="music-icon"></i>
+<span class="absolute -inset-1 rounded-full bg-pink-400/30 animate-ping pointer-events-none" id="music-ping"></span>
+</button>
+</div>
+<!-- Audio Element ẩn (Link nhạc Acoustic/Lofi vui vẻ, nhẹ nhàng) -->
+<audio id="bg-music" loop="" preload="auto">
+<!-- Nguồn nhạc nhẹ nhàng không lời dễ thương chào mừng -->
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=sweet-love-111002.mp3" type="audio/mpeg">
+</audio>
+<!-- ================= TOÀN BỘ NỘI DUNG CHÍNH (Z-INDEX 10) ================= -->
+<main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14 flex flex-col items-center">
+<!-- ================= HERO SECTION ================= -->
+<section class="text-center w-full max-w-4xl pt-4 pb-10 sm:pb-14">
+<!-- Badge vui nhộn -->
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glassmorphism text-pink-700 font-bold text-xs sm:text-sm tracking-wide shadow-sm mb-6 border border-pink-200 animate-bounce">
+<span class="text-base">🌸</span>
+<span class="">SỰ KIỆN QUỐC TẾ BẠN THÂN 20/10</span>
+<span class="text-base">✨</span>
+</div>
+<!-- Main Title -->
+<h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight uppercase leading-tight sm:leading-none text-glow mb-4">
+<span class="block text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600 font-black">
+          HAPPY WOMEN'S DAY 20/10
+        </span>
+<span class="block mt-2 text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-800 tracking-normal normal-case">
+          Biệt Đội <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 underline decoration-wavy decoration-pink-400">"Cánh Tay Đắc Lực"</span> Của LQD
+        </span>
+</h1>
+<!-- Intro Subtitle -->
+<p class="font-handwriting text-2xl sm:text-3xl text-pink-700 font-semibold mb-6">
+        "Không có các cậu, cuộc đời tớ như bánh mì không pate vậy đó!" 🍞💖
+      </p>
+<div class="max-w-2xl mx-auto p-4 sm:p-6 rounded-2xl glassmorphism shadow-glass text-slate-700 text-sm sm:text-base leading-relaxed">
+<p class="">
+          Hôm nay ngày 20/10, đại diện phía <strong class="text-purple-700 font-bold">LQD</strong> xin gửi ngàn lời chúc xịn mịn nhất tới 3 đại mỹ nhân kiêm "nóc nhà chiến lược". 
+          <br class="hidden sm:inline">Hãy chạm vào từng hộp quà bí mật bên dưới để bóc phong bì tâm thư đặc quyền nhé! 🎁👇
+        </p>
+</div>
+</section>
+<!-- ================= 3 HỘP QUÀ TƯƠNG TÁC (GIFT SECTION) ================= -->
+<section class="w-full my-6 sm:my-10">
+<div class="text-center mb-8">
+<h2 class="text-xl sm:text-2xl font-bold text-slate-800 flex items-center justify-center gap-2">
+<span class="">🎁</span>
+<span class="">KHU VỰC NHẬN QUÀ RIÊNG BIỆT</span>
+<span class="">🎁</span>
+</h2>
+<p class="text-xs sm:text-sm text-slate-500 mt-1">Chạm vào hộp quà có tên bạn để mở phong thư bí mật</p>
+</div>
+<!-- 3 Hộp quà hiển thị dạng Grid mượt mà Responsive -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+<!-- Card 1: Mỹ Duyên -->
+<div class="group hover-wiggle cursor-pointer p-6 sm:p-8 rounded-3xl glassmorphism-card shadow-glass hover:shadow-glass-hover transition-all duration-300 transform hover:-translate-y-2.5 active:scale-95 flex flex-col items-center text-center relative overflow-hidden border border-pink-200" onclick="openGift('myDuyen')">
+<!-- Decor Tag -->
+<div class="absolute top-3 right-3 bg-pink-100 text-pink-600 text-xs px-2.5 py-1 rounded-full font-bold shadow-sm z-10">
+            #Quản_Lý_Vũ_Trụ 👑
+          </div>
+<!-- Avatar & Gift Icon kết hợp nghệ thuật -->
+<div class="relative my-3 flex flex-col items-center">
+<!-- Avatar tròn lộng lẫy có viền gradient phát sáng -->
+<div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-pink-500 via-rose-400 to-amber-300 shadow-avatar-glow group-hover:scale-105 transition-transform duration-300">
+<img alt="Mỹ Duyên" class="w-full h-full object-cover object-top rounded-full border-2 border-white shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGlyks_wAptGDv4-WOxKwR-qGOf2odZ-iBd4xKEqDx7sjFMPppOtNSnDzvtiykRnu5dpOVSPCpQO_QjJEoTD55inSutbkHF4iZcPzq0TmDy-4I6vrFQO6JHuzfbj3YXy5_Kq3VZmooVv0LWXYYCIo9YDTveWZ-Ps54898y2ybYasBn94eVfMg1a46tveoiLvj9G8I7SfB0zB4Zv_bfjjS34xMFNsZ_1r6XZy93xqKxNLyMy3LgqMGaQ7By6kFvY_nSQ">
+<!-- Mini Gift badge nổi ở góc avatar -->
+<div class="gift-box-icon absolute -bottom-1 -right-1 w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex items-center justify-center shadow-md border-2 border-white text-base">
+                🎁
+              </div>
+<span class="absolute -top-1 -left-1 text-lg animate-pulse">👑</span>
+</div>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-slate-800 mt-2 group-hover:text-pink-600 transition-colors">
+            Mỹ Duyên
+          </h3>
+<p class="text-xs sm:text-sm font-medium text-purple-600 mt-1">
+            "Trưởng ban gánh team &amp; siêu lý trí"
+          </p>
+<!-- Nút chạm tương tác -->
+<button class="mt-6 w-full py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold text-sm tracking-wide shadow-btn-glow flex items-center justify-center gap-2 group-hover:from-pink-600 group-hover:to-rose-600 transition-all">
+<span class="">Mở quà ngay</span>
+<i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+</button>
+</div>
+<!-- Card 2: Kiều Vi -->
+<div class="group hover-wiggle cursor-pointer p-6 sm:p-8 rounded-3xl glassmorphism-card shadow-glass hover:shadow-glass-hover transition-all duration-300 transform hover:-translate-y-2.5 active:scale-95 flex flex-col items-center text-center relative overflow-hidden border border-purple-200" onclick="openGift('kieuVi')">
+<!-- Decor Tag -->
+<div class="absolute top-3 right-3 bg-purple-100 text-purple-600 text-xs px-2.5 py-1 rounded-full font-bold shadow-sm z-10">
+            #Đại_Sứ_Nụ_Cười 🌟
+          </div>
+<!-- Avatar & Gift Icon kết hợp nghệ thuật -->
+<div class="relative my-3 flex flex-col items-center">
+<!-- Avatar tròn lộng lẫy có viền gradient phát sáng tím hồng -->
+<div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-purple-600 via-pink-500 to-amber-200 shadow-avatar-glow group-hover:scale-105 transition-transform duration-300">
+<img alt="Kiều Vi" class="w-full h-full object-cover object-[60%_30%] rounded-full border-2 border-white shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs4IId__-Ku5NnwuTtFBSgfQcPSNEeCbtVC7L6_Jn-qgM_APoEIStlmtDJfeXeJ4n3uQoKNoQezkMjCjDsZ3HtmKejhElHUrg7NGv5BT9LANsZhloL9Tjg0eZc0OIbyk54q4IxzwnHMMleVrwKISa-DDc2N9Ejqh0UZ-2LPTzAK_w2u2PZQcdWQLXJQUeS6mtxUFAw17ATtg6mmShJR76vbnUfEJXWd0zdeWqQtifPVTrRCWqNL5YNF6u6ujN0eWlBLg">
+<!-- Mini Gift badge nổi ở góc avatar -->
+<div class="gift-box-icon absolute -bottom-1 -right-1 w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 text-white flex items-center justify-center shadow-md border-2 border-white text-base">
+                ✨
+              </div>
+<span class="absolute -top-1 -left-1 text-lg animate-pulse">🎤</span>
+</div>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-slate-800 mt-2 group-hover:text-purple-600 transition-colors">
+            Kiều Vi
+          </h3>
+<p class="text-xs sm:text-sm font-medium text-pink-600 mt-1">
+            "Máy phát năng lượng &amp; vitamin vui vẻ"
+          </p>
+<button class="mt-6 w-full py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-sm tracking-wide shadow-btn-glow flex items-center justify-center gap-2 group-hover:from-purple-600 group-hover:to-pink-600 transition-all">
+<span class="">Mở quà ngay</span>
+<i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+</button>
+</div>
+<!-- Card 3: Phương Thanh -->
+<div class="group hover-wiggle cursor-pointer p-6 sm:p-8 rounded-3xl glassmorphism-card shadow-glass hover:shadow-glass-hover transition-all duration-300 transform hover:-translate-y-2.5 active:scale-95 flex flex-col items-center text-center relative overflow-hidden border border-rose-200" onclick="openGift('phuongThanh')">
+<!-- Decor Tag -->
+<div class="absolute top-3 right-3 bg-rose-100 text-rose-600 text-xs px-2.5 py-1 rounded-full font-bold shadow-sm z-10">
+            #Đệ_Nhất_Tinh_Tế 💎
+          </div>
+<!-- Avatar & Gift Icon kết hợp nghệ thuật -->
+<div class="relative my-3 flex flex-col items-center">
+<!-- Avatar tròn lộng lẫy có viền gradient phát sáng hồng fuchsia -->
+<div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-gradient-to-tr from-rose-500 via-fuchsia-400 to-teal-200 shadow-avatar-glow group-hover:scale-105 transition-transform duration-300">
+<img alt="Phương Thanh" class="w-full h-full object-cover object-top rounded-full border-2 border-white shadow-inner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo3FZDpz6S64P2YJIvoOf_ea1LpuaFHfbYAEIW6OZ5VgF9z1OEPUzs-R_9V6fmrYpoYlo_jSfnY4x6Sschl-Nn4Vgs9XMz6MGqzbDIx-vTEWCH9-AMgkYb6B2bD0RkQr8UkRw-MEtO0rJSsUHV9EsBo729y9wiMJ0YaiDLl1BgGijkfIjyKhSvv-HGaBzF-VM5QKz0hxy48jz1Hek-0vRBX9vay_jSy2-LuaocIX8gkuL4nus5ukF8l6FdElBjQfXXMA">
+<!-- Mini Gift badge nổi ở góc avatar -->
+<div class="gift-box-icon absolute -bottom-1 -right-1 w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 to-purple-500 text-white flex items-center justify-center shadow-md border-2 border-white text-base">
+                🌸
+              </div>
+<span class="absolute -top-1 -left-1 text-lg animate-pulse">💎</span>
+</div>
+</div>
+<h3 class="text-xl sm:text-2xl font-bold text-slate-800 mt-2 group-hover:text-rose-600 transition-colors">
+            Phương Thanh
+          </h3>
+<p class="text-xs sm:text-sm font-medium text-purple-600 mt-1">
+            "Chuyên gia lắng nghe &amp; bà trùm chốt kèo"
+          </p>
+<button class="mt-6 w-full py-2.5 sm:py-3 px-4 rounded-xl bg-gradient-to-r from-rose-500 to-purple-500 text-white font-bold text-sm tracking-wide shadow-btn-glow flex items-center justify-center gap-2 group-hover:from-rose-600 group-hover:to-purple-600 transition-all">
+<span class="">Mở quà ngay</span>
+<i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition-transform"></i>
+</button>
+</div>
+</div>
+</section>
+<!-- ================= LỜI HỨA BẠN THÂN SECTION (INTERACTIVE PERKS) ================= -->
+
+<!-- ================= FOOTER / OUTRO & THẢ TIM TRÀN MÀN HÌNH ================= -->
+<footer class="w-full max-w-2xl text-center mt-6 mb-8 flex flex-col items-center">
+<!-- Big Heart Floating Action Button -->
+<button class="group px-8 py-4 sm:px-10 sm:py-5 rounded-full bg-gradient-to-r from-pink-500 via-rose-500 to-purple-600 text-white font-extrabold text-base sm:text-lg shadow-glow hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3 cursor-pointer" onclick="burstHearts(event)">
+<i class="fa-solid fa-heart text-2xl text-white group-hover:animate-bounce"></i>
+<span class="">BẤM ĐỂ THẢ TRIỆU TRÁI TIM TẶNG 3 BẠN 💖</span>
+</button>
+<span class="text-xs text-slate-500 mt-2 italic">(Bấm liên tục để kích hoạt cơn mưa tình yêu siêu to khổng lồ)</span>
+<!-- Lời kết ấm áp từ LQD -->
+<div class="mt-10 pt-6 border-t border-pink-200/60 w-full text-slate-600">
+<p class="font-handwriting text-2xl sm:text-3xl text-purple-700 font-bold mb-1">
+          Made with all heart &amp; fun by LQD
+        </p>
+<p class="text-xs sm:text-sm text-slate-500">
+          Cảm ơn vì đã luôn đồng hành, chịu đựng và tỏa sáng cùng tớ trong suốt thanh xuân này! 💐
+        </p>
+</div>
+</footer>
+</main>
+<!-- ================= MODAL LỜI CHÚC CÁ NHÂN HÓA (BAO THƯ) ================= -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300" id="wish-modal">
+<!-- Modal Card Container (Letter styling) -->
+<div class="relative w-full max-w-lg letter-paper rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-pink-300 modal-animate-in overflow-hidden max-h-[90vh] flex flex-col justify-between">
+<!-- Nút Đóng (X) lớn, chuẩn 44x44px cho Mobile Touch -->
+<button aria-label="Đóng thư" class="absolute top-4 right-4 w-11 h-11 rounded-full bg-pink-100 hover:bg-pink-200 active:bg-pink-300 text-pink-700 flex items-center justify-center text-xl transition-all shadow-sm focus:outline-none z-20 cursor-pointer" onclick="closeModal()">
+<i class="fa-solid fa-xmark"></i>
+</button>
+<!-- Con dấu sáp phong thư ảo -->
+<div class="w-12 h-12 rounded-full bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center font-bold text-xs shadow-md border-2 border-white mb-3 flex-shrink-0">
+        20/10
+      </div>
+<!-- Header Modal: Ảnh cá nhân hóa & Tiêu đề -->
+<div class="mb-4 flex items-center gap-4">
+<!-- Avatar bên trong Modal -->
+<div class="relative flex-shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-2xl p-1 bg-gradient-to-tr from-pink-500 via-rose-400 to-purple-600 shadow-md">
+<img alt="Avatar" class="w-full h-full object-cover rounded-xl border border-white" id="modal-avatar" src="">
+<span class="absolute -bottom-2 -right-2 text-base bg-white rounded-full p-0.5 shadow" id="modal-avatar-badge">✨</span>
+</div>
+<!-- Tiêu đề & Danh xưng -->
+<div>
+<span class="text-xs font-bold uppercase tracking-wider text-purple-600 px-3 py-1 bg-purple-100 rounded-full inline-block" id="modal-tag">
+            Gửi Cánh Tay Đắc Lực
+          </span>
+<h3 class="text-xl sm:text-2xl font-black text-slate-800 mt-1" id="modal-name">
+            Gửi Mỹ Duyên
+          </h3>
+<p class="text-xs sm:text-sm font-semibold text-pink-600 italic" id="modal-role">
+            "Trưởng ban xử lý khủng hoảng"
+          </p>
+</div>
+</div>
+<!-- Nội dung thư cá nhân hóa (Có thể cuộn nếu dài) -->
+<div class="overflow-y-auto text-slate-700 text-sm sm:text-base leading-relaxed pr-1 my-2 space-y-3 font-medium" id="modal-body">
+<!-- Javascript sẽ nhồi nội dung vào đây -->
+</div>
+<!-- Footer Modal: Chữ ký tay -->
+<div class="mt-6 pt-4 border-t border-dashed border-pink-200 flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-400">Trân trọng từ:</p>
+<p class="font-handwriting text-2xl text-pink-600 font-bold">LQD của các cậu ✨</p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-600 active:scale-95 text-white font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-1.5" onclick="modalBurst()">
+<span class="">Tung hoa</span> 🌸
+        </button>
+</div>
+</div>
+</div>
+<!-- ================= JAVASCRIPT LOGIC ================= -->
+<script>
+    /* ========================================================
+       1. DATA LỜI CHÚC CÁ NHÂN HÓA CHO 3 THÀNH VIÊN
+       (Kèm ảnh đại diện riêng cho từng bạn)
+       ======================================================== */
+    const wishesData = {
+      myDuyen: {
+        name: "Mỹ Duyên 💖",
+        role: "Trưởng ban gánh team & Đại thần lý trí",
+        tag: "#The_Boss_Lady",
+        avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBZGlyks_wAptGDv4-WOxKwR-qGOf2odZ-iBd4xKEqDx7sjFMPppOtNSnDzvtiykRnu5dpOVSPCpQO_QjJEoTD55inSutbkHF4iZcPzq0TmDy-4I6vrFQO6JHuzfbj3YXy5_Kq3VZmooVv0LWXYYCIo9YDTveWZ-Ps54898y2ybYasBn94eVfMg1a46tveoiLvj9G8I7SfB0zB4Zv_bfjjS34xMFNsZ_1r6XZy93xqKxNLyMy3LgqMGaQ7By6kFvY_nSQ",
+        badge: "👑",
+        messages: [
+          "Gửi <strong>Mỹ Duyên</strong> - người phụ nữ luôn giữ được cái đầu lạnh khi cả nhóm đang hoảng loạn! 😂",
+          "Chúc Duyên ngày 20/10 luôn xinh đẹp rạng ngời, thần thái ngút ngàn, công việc hanh thông, KPI nào cũng vượt vèo vèo mà không hề bị tiền đình.",
+          "Cảm ơn cậu vì đã luôn là chỗ dựa cực kỳ vững chắc, vừa thông minh vừa tinh tế lại vô cùng bao dung với những pha 'ngơ ngác' của tớ.",
+          "Chúc cậu mau chóng đạt được mọi mục tiêu lớn trong năm nay, tiền vào như nước sông Đà mà tiền ra nhỏ giọt như cà phê phin nhé! Chúc Duyên mãi là bông hoa rực rỡ nhất! 🌹"
+        ]
+      },
+      kieuVi: {
+        name: "Kiều Vi ✨",
+        role: "Máy phát năng lượng & Đại sứ nụ cười",
+        tag: "#Vitamin_Vui_Vẻ",
+        avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuAs4IId__-Ku5NnwuTtFBSgfQcPSNEeCbtVC7L6_Jn-qgM_APoEIStlmtDJfeXeJ4n3uQoKNoQezkMjCjDsZ3HtmKejhElHUrg7NGv5BT9LANsZhloL9Tjg0eZc0OIbyk54q4IxzwnHMMleVrwKISa-DDc2N9Ejqh0UZ-2LPTzAK_w2u2PZQcdWQLXJQUeS6mtxUFAw17ATtg6mmShJR76vbnUfEJXWd0zdeWqQtifPVTrRCWqNL5YNF6u6ujN0eWlBLg",
+        badge: "🎤",
+        messages: [
+          "Gửi <strong>Kiều Vi</strong> - chiếc máy phát nụ cười và năng lượng tích cực không bao giờ cạn pin! ☀️",
+          "Chúc Vi một ngày 20/10 tràn ngập hoa, quà, tiếng cười và đồ ăn ngon. Chúc cậu nhan sắc thăng hạng không phanh, da dẻ mịn màng, cười một cái là cả thiên hạ đổ gục!",
+          "Ở cạnh Vi lúc nào cũng thấy cuộc đời rực rỡ và bớt áp lực hơn rất nhiều. Cảm ơn cậu vì luôn lan tỏa sự ấm áp, hài hước và nhiệt tình hết nấc.",
+          "Chúc Vi luôn giữ được đôi mắt lấp lánh và nụ cười rạng rỡ này, mong mọi điều may mắn và ngọt ngào nhất sẽ luôn tìm đến với cậu! 🍰🥂"
+        ]
+      },
+      phuongThanh: {
+        name: "Phương Thanh 💎",
+        role: "Chuyên gia lắng nghe & Trùm chốt kèo",
+        tag: "#Nàng_Thơ_Tinh_Tế",
+        avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDo3FZDpz6S64P2YJIvoOf_ea1LpuaFHfbYAEIW6OZ5VgF9z1OEPUzs-R_9V6fmrYpoYlo_jSfnY4x6Sschl-Nn4Vgs9XMz6MGqzbDIx-vTEWCH9-AMgkYb6B2bD0RkQr8UkRw-MEtO0rJSsUHV9EsBo729y9wiMJ0YaiDLl1BgGijkfIjyKhSvv-HGaBzF-VM5QKz0hxy48jz1Hek-0vRBX9vay_jSy2-LuaocIX8gkuL4nus5ukF8l6FdElBjQfXXMA",
+        badge: "🌸",
+        messages: [
+          "Gửi <strong>Phương Thanh</strong> - cô gái ngọt ngào, tinh tế và luôn có những pha 'chốt kèo' siêu mượt mà! 🎀",
+          "Chúc Thanh 20/10 thật hạnh phúc, được cưng chiều như công chúa, mọi sự êm đềm, an yên và gặp toàn những điều xứng đáng với trái tim nhân hậu của cậu.",
+          "Cảm ơn Thanh vì luôn sẵn lòng lắng nghe, đưa ra những lời khuyên chân thành và luôn xuất hiện đúng lúc mọi người cần nhất.",
+          "Mong cậu lúc nào cũng xinh đẹp, trẻ trung, ví luôn dày cộm và sớm tìm được chân ái chiều chuộng cậu hết lòng (nếu có rồi thì càng thêm mặn nồng nha)! 💐🥰"
+        ]
+      }
+    };
+
+    /* ========================================================
+       2. CANVAS PARTICLES HIỆU NĂNG CAO: CÁNH HOA & TRÁI TIM RƠI
+       Tối ưu 60FPS: Giới hạn 25 hạt, tận dụng requestAnimationFrame
+       ======================================================== */
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const particles = [];
+    const PARTICLE_COUNT = 24; // Số lượng vừa đủ để không giật lag trên mobile
+    const symbols = ['🌸', '💖', '✨', '🌺', '💕'];
+
+    function resizeCanvas() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+
+      reset() {
+        this.x = Math.random() * width;
+        this.y = -20 - Math.random() * 50;
+        this.size = 14 + Math.random() * 14;
+        this.speedY = 1 + Math.random() * 1.8;
+        this.speedX = (Math.random() - 0.5) * 1.2;
+        this.symbol = symbols[Math.floor(Math.random() * symbols.length)];
+        this.opacity = 0.35 + Math.random() * 0.5;
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = (Math.random() - 0.5) * 2;
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.01) + this.speedX;
+        this.rotation += this.rotationSpeed;
+
+        if (this.y > height + 30) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.opacity;
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.font = `${this.size}px serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.symbol, 0, 0);
+        ctx.restore();
+      }
+    }
+
+    function initParticles() {
+      resizeCanvas();
+      particles.length = 0;
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        const p = new Particle();
+        p.y = Math.random() * height; // Rải đều màn hình ngay từ đầu
+        particles.push(p);
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      requestAnimationFrame(animateParticles);
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    initParticles();
+    animateParticles();
+
+    /* ========================================================
+       3. BACKGROUND MUSIC & AUTOPLAY POLICY HANDLER
+       ======================================================== */
+    const musicBtn = document.getElementById('music-toggle-btn');
+    const musicIcon = document.getElementById('music-icon');
+    const musicPing = document.getElementById('music-ping');
+    const musicText = document.getElementById('music-status-text');
+    const bgAudio = document.getElementById('bg-music');
+    let isPlaying = false;
+
+    function playAudio() {
+      bgAudio.play().then(() => {
+        isPlaying = true;
+        musicIcon.className = "fa-solid fa-compact-disc text-xl animate-spin-slow";
+        musicPing.classList.remove('hidden');
+        if (musicText) musicText.innerText = "Đang phát nhạc 🎶";
+      }).catch(err => {
+        console.log("Autoplay policy chặn: người dùng cần tương tác lần đầu");
+      });
+    }
+
+    function pauseAudio() {
+      bgAudio.pause();
+      isPlaying = false;
+      musicIcon.className = "fa-solid fa-music text-xl";
+      musicPing.classList.add('hidden');
+      if (musicText) musicText.innerText = "Bật nhạc chill 🎶";
+    }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        pauseAudio();
+      } else {
+        playAudio();
+      }
+    }
+
+    musicBtn.addEventListener('click', toggleMusic);
+
+    // Tự động thử phát hoặc phát khi chạm bất kỳ đâu lần đầu tiên trên màn hình
+    document.addEventListener('click', function firstInteraction() {
+      if (!isPlaying) {
+        // Chỉ thử play nếu chưa bật
+        playAudio();
+      }
+      document.removeEventListener('click', firstInteraction);
+    }, { once: true });
+
+    /* ========================================================
+       4. PHÁO HOA / CONFETTI & HIỆU ỨNG MỞ HỘP QUÀ
+       ======================================================== */
+    function triggerConfetti() {
+      if (typeof confetti === 'function') {
+        // Bắn từ 2 bên hông màn hình
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.7, x: 0.2 },
+          colors: ['#FF6584', '#FF2E7E', '#A4508B', '#FDE047', '#38BDF8']
+        });
+        confetti({
+          particleCount: 70,
+          spread: 60,
+          origin: { y: 0.7, x: 0.8 },
+          colors: ['#FF6584', '#FF2E7E', '#A4508B', '#FDE047', '#38BDF8']
+        });
+      }
+    }
+
+    function modalBurst() {
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 50,
+          spread: 80,
+          origin: { y: 0.5 }
+        });
+      }
+    }
+
+    /* ========================================================
+       5. MODAL LOGIC (KHÓA CUỘN NỀN & POPUP THƯ)
+       ======================================================== */
+    const modal = document.getElementById('wish-modal');
+    const modalName = document.getElementById('modal-name');
+    const modalRole = document.getElementById('modal-role');
+    const modalTag = document.getElementById('modal-tag');
+    const modalBody = document.getElementById('modal-body');
+    const modalAvatar = document.getElementById('modal-avatar');
+    const modalAvatarBadge = document.getElementById('modal-avatar-badge');
+
+    function openGift(personKey) {
+      const data = wishesData[personKey];
+      if (!data) return;
+
+      // Nạp thông tin
+      modalName.innerText = data.name;
+      modalRole.innerText = `"${data.role}"`;
+      modalTag.innerText = data.tag;
+      if (modalAvatar) {
+        modalAvatar.src = data.avatar;
+        modalAvatar.alt = data.name;
+      }
+      if (modalAvatarBadge) {
+        modalAvatarBadge.innerText = data.badge || '✨';
+      }
+      
+      // Tạo đoạn văn bản
+      modalBody.innerHTML = data.messages.map(p => `<p class="leading-relaxed">${p}</p>`).join('');
+
+      // Khóa cuộn trang nền để tối ưu trên điện thoại
+      document.body.style.overflow = 'hidden';
+
+      // Hiển thị modal
+      modal.classList.remove('hidden');
+
+      // Kích hoạt pháo hoa vui nhộn
+      triggerConfetti();
+
+      // Nếu nhạc chưa bật, tự động kích hoạt
+      if (!isPlaying) {
+        playAudio();
+      }
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+      // Mở lại cuộn trang
+      document.body.style.overflow = 'auto';
+    }
+
+    // Đóng khi click ra vùng xám mờ bên ngoài
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Hỗ trợ phím ESC trên desktop
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    /* ========================================================
+       6. THẢ TIM TRÀN MÀN HÌNH (BURST HEARTS)
+       ======================================================== */
+    function burstHearts(e) {
+      // 1. Pháo hoa hình tim nếu dùng canvas-confetti
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 40,
+          scalar: 1.3,
+          spread: 100,
+          shapes: ['circle'],
+          colors: ['#FF2E7E', '#FF6584', '#FF85A1', '#E11D48']
+        });
+      }
+
+      // 2. Tạo các trái tim DOM bay lên từ nút bấm
+      const heartCount = 12;
+      for (let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.innerHTML = ['💖', '💕', '💗', '💓', '🌸', '💐'][Math.floor(Math.random() * 6)];
+        heart.style.position = 'fixed';
+        heart.style.zIndex = '9999';
+        heart.style.fontSize = `${20 + Math.random() * 26}px`;
+        heart.style.pointerEvents = 'none';
+
+        // Lấy tọa độ click hoặc giữa màn hình
+        const startX = e ? e.clientX : window.innerWidth / 2;
+        const startY = e ? e.clientY : window.innerHeight / 2;
+        
+        heart.style.left = `${startX + (Math.random() - 0.5) * 80}px`;
+        heart.style.top = `${startY}px`;
+        heart.style.opacity = '1';
+        heart.style.transform = `scale(0.6) rotate(${Math.random() * 60 - 30}deg)`;
+        heart.style.transition = 'all 1.6s cubic-bezier(0.12, 0.8, 0.32, 1)';
+
+        document.body.appendChild(heart);
+
+        // Kích hoạt bay lên
+        requestAnimationFrame(() => {
+          heart.style.top = `${startY - 250 - Math.random() * 200}px`;
+          heart.style.left = `${parseFloat(heart.style.left) + (Math.random() - 0.5) * 160}px`;
+          heart.style.opacity = '0';
+          heart.style.transform = `scale(1.5) rotate(${Math.random() * 120 - 60}deg)`;
+        });
+
+        // Tự hủy DOM sau khi hoàn thành animation
+        setTimeout(() => {
+          heart.remove();
+        }, 1700);
+      }
+    }
+  </script>
+
+
+</body></html>
